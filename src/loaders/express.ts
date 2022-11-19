@@ -6,7 +6,6 @@ import morgan from 'morgan';
 
 export default async (app: express.Application) => {
     // Routes
-    app.get('/', (req, res) => { res.send({ title: 'Hello, world (again)!' }); });
     app.get('/status', (req, res) => { res.status(200).end(); });
     app.enable('trust proxy');
 
