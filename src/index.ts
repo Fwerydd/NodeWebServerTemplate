@@ -2,6 +2,7 @@ import express from 'express'
 
 import config from './config/index';
 import loader from './loaders/index';
+import Logger from "./lib/logger";
 
 async function startServer() {
     const app = express();
@@ -11,7 +12,7 @@ async function startServer() {
 
     // Launch the server
     app.listen(config.port, () => {
-        console.log(`Server listening on port ${config.port}.`);
+        Logger.info(`Server listening on port http://127.0.0.1:${config.port}.`);
     });
 }
 
