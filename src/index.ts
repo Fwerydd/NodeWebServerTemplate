@@ -1,13 +1,13 @@
 import express from 'express'
 
 import config from './config/index';
-import expressLoader from './loaders/express';
+import loader from './loaders/index';
 
 async function startServer() {
     const app = express();
 
     // Loaders
-    await expressLoader(app);
+    await loader(app);
 
     // Launch the server
     app.listen(config.port, () => {
