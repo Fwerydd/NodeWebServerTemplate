@@ -1,6 +1,5 @@
 import config from '../config/index';
 
-import path from 'path';
 import winston from 'winston';
 
 const levels = {
@@ -31,7 +30,7 @@ winston.addColors(colors);
 
 const format = winston.format.combine(
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-    winston.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`,),
+    winston.format.printf((info) => `${info.timestamp} ${info.level}: ${info.message}`),
 )
 
 const transports = [
