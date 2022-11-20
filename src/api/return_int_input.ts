@@ -4,7 +4,7 @@ import express from 'express';
 export default async (app: express.Application) => {
     app.post(
         '/input',
-        body('int').isNumeric(),
+        body('int').isInt(),
         (req, res) => {
             try {
                 validationResult(req).throw();
