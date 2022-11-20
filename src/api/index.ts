@@ -1,7 +1,7 @@
 import express from 'express';
 
-import helloWorld from './hello_world';
-import returnIntInput from './return_int_input';
+import helloWorld from './hello-world';
+import returnIntInput from './return-int-input';
 
 export default async (app: express.Application) => {
     await helloWorld(app);
