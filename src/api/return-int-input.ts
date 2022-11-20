@@ -1,13 +1,14 @@
-import { body, validationResult } from 'express-validator';
+import { validationResult } from 'express-validator';
 import express from 'express';
 
 import IntInputService from '../services/int-input-service';
+import { returnIntInputValidateChainMethod } from './validators/return-int-input-validator';
 
 export default async (app: express.Application) => {
     app.post(
         '/input',
-        body('int').isInt(),
-        (req, res) => {
+        returnIntInputValidateChainMethod,
+        (req: express.Request, res: express.Response) => {
             try {
                 validationResult(req).throw();
                 const result = IntInputService.save(req.body.int);
