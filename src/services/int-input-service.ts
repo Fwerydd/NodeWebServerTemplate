@@ -1,5 +1,5 @@
 export default class IntInputService {
-    public static save(user_input: number) {
-        return user_input;
+    public static save(userInput: number) {
+        return userInput;
     }
 }
